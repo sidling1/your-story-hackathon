@@ -5,6 +5,14 @@ import ProfilePosts from '../Components/ProfilePosts';
 import ProfileResources from '../Components/ProfileResources';
 
 
+const tempProfile = {
+    name: "bebo",
+    email: "bebo@gmail.org",
+    username: "kickgrey",
+    type: "Enthusiast"
+    // other details will decide later
+}
+
 export default function Profile() {
     
     return (
@@ -24,7 +32,7 @@ export default function Profile() {
                 
             <div>
                 <Routes>
-                    <Route path={``} element={<ProfileComponent/>} />
+                    <Route path={``} element={<ProfileComponent profile={tempProfile}/>} />
                     <Route path={`posts`} element={<ProfilePosts/>} />
                     <Route path={`resources`} element={<ProfileResources/>} />
                 </Routes>

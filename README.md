@@ -7,10 +7,22 @@
 - [x] Navbar Component
 - [x] Home Page Basic
 - [x] Profile Page Basic
-- [ ] Resources Page Basic
-- [ ] Profile Page Component
+- [x] Resources Page Basic
+- [ ] Resource Visualization on click
+- [x] Profile Page Component
 - [ ] Profile Page Posts
-- [ ] Profile Page resources
+- [x] Profile Page resources
 - [ ] Home Page Resources/connections/articles
+- [ ] Recommended Connections
+- [ ] Recommended Resources/Articles
+- [ ] Notifications
+- [ ] Events Page
 
+## Back-End
+- [ ] Basic API to get data
+
+
+## Database
+- [ ] Set Up PostgresSql
+- [ ] Design the database on paper (use GPT)
 

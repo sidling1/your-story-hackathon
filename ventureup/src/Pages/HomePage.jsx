@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from '../Components/NavBar.jsx'
 import Notifications from '../Components/Notifications.jsx'
 import Events from '../Components/Events.jsx'
 
 export default function HomePage() {
+
+  const [recommendedResource,setRecommendedResource] = useState([])
+  const [recommendedConnections,setRecommendedConnections] = useState([])
+
+
   return (
     <div>
         <div>

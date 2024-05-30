@@ -19,6 +19,7 @@
 - [ ] Events Page
 
 ## Back-End
+- [x] Basic Backend
 - [ ] Basic API to get data
 
 
@@ -26,3 +27,7 @@
 - [ ] Set Up PostgresSql
 - [ ] Design the database on paper (use GPT)
 
+# Instructions
+
+- Install Docker
+- docker pull postgres

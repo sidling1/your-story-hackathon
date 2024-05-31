@@ -1,0 +1,80 @@
+.discussion-forums {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .forums-list {
+    flex-basis: 30%;
+    margin-right: 20px;
+  }
+  
+  .forums-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .forums-list li {
+    margin-bottom: 10px;
+  }
+  
+  .forums-list a {
+    text-decoration: none;
+    color: #337ab7;
+  }
+  
+  .forums-list a:hover {
+    color: #23527c;
+  }
+  
+  .selected-forum {
+    flex-basis: 70%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .selected-forum h2 {
+    margin-top: 0;
+  }
+  
+  .selected-forum ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .selected-forum li {
+    margin-bottom: 20px;
+  }
+  
+  .selected-forum p {
+    margin-bottom: 10px;
+  }
+  
+  .selected-forum form {
+    margin-top: 20px;
+  }
+  
+  .selected-forum textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+  }
+  
+  .selected-forum button[type="submit"] {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .selected-forum button[type="submit"]:hover {
+    background-color: #23527c;
+  }

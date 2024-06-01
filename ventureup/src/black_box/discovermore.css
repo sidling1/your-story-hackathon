@@ -1,0 +1,25 @@
+.discover-more {
+    padding: 20px;
+  }
+  
+  .infinite-list {
+    overflow-y: auto;
+    height: 500px;
+    padding: 20px;
+  }
+  
+  .post, .resource, .connection {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .post h2, .resource h2, .connection h2 {
+    margin-top: 0;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 20px;
+    color: #337ab7;
+  }

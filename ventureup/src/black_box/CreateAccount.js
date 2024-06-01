@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './index.css';
+import './createaccount.css';
 
 function CreateAccount() {
   const [fullName, setFullName] = useState('');

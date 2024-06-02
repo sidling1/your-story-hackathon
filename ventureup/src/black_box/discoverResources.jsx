@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './discovermore.css';
-import Post from '../Components/PostComponent';
 import Resources from '../Components/ResourcesComponent';
-import Connections from '../Components/ConnectionsComponent';
 
-function DiscoverMore() {
+function DiscoverResources() {
 
   
-  const author = {
-    name: 'John Doe',
-    title: 'Software Engineer',
-    image: 'https://example.com/author.jpg',
-  };
+//   const author = {
+//     name: 'John Doe',
+//     title: 'Software Engineer',
+//     image: 'https://example.com/author.jpg',
+//   };
 
-  const content = 'This is an example post with some content.';
+//   const content = 'This is an example post with some content.';
 
   
   const resource = {
@@ -21,9 +19,7 @@ function DiscoverMore() {
     description: "Paise he paisa hoga"
   }
 
-  const [posts, setPosts] = useState([{id: 0,author: author, content: content}]);
   const [resources, setResources] = useState([{id:0, resource: resource}]);
-  const [connections, setConnections] = useState([{id:0,name:"bb",bio:"goddess"}]);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
 
@@ -41,13 +37,6 @@ function DiscoverMore() {
   //   setPosts(temp);
   // },[]);
 
-  const fetchPosts = () => {
-    // Fetch posts from API or database
-    fetch('/api/posts')
-      .then(res => res.json())
-      .then(data => setPosts([...posts, ...data]));
-  };
-
   const fetchResources = () => {
     // Fetch resources from API or database
     fetch('/api/resources')
@@ -55,31 +44,19 @@ function DiscoverMore() {
       .then(data => setResources([...resources, ...data]));
   };
 
-  const fetchConnections = () => {
-    // Fetch connections from API or database
-    fetch('/api/connections')
-      .then(res => res.json())
-      .then(data => setConnections([...connections, ...data]));
-  };
-
   const handleScroll = () => {
     if (loading) return;
     if (hasMore) {
       setLoading(true);
-      fetchPosts();
       fetchResources();
-      fetchConnections();
       setLoading(false);
     }
   };
 
   return (
     <div className="discover-more">
-      <h1>Discover More</h1>
+      <h1>Discover Resources</h1>
       <div className="infinite-list" onScroll={handleScroll}>
-        {posts.map(post => (
-          <Post author={post.author} content={post.content}/>
-        ))}
         {resources.map(res => (
           // <div key={resource.id} className="resource">
           //   <h2>{resource.title}</h2>
@@ -87,17 +64,10 @@ function DiscoverMore() {
           // </div>
           <Resources resource={res.resource}/>
         ))}
-        {connections.map(connection => (
-          // <div key={connection.id} className="connection">
-          //   <h2>{connection.name}</h2>
-          //   <p>{connection.bio}</p>
-          // </div>
-          <Connections/>
-        ))}
         {loading && <div className="loading">Loading...</div>}
       </div>
     </div>
   );
 }
 
-export default DiscoverMore;
+export default DiscoverResources;

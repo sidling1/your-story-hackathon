@@ -1,18 +1,38 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './createaccount.css';
+import { useNavigate } from 'react-router-dom';
+import { authContext } from './contexts';
 
-function CreateAccount() {
+
+function CreateAccount({ setLoggedIn }) {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigate = useNavigate();
+  const { user, setUser } = useContext(authContext);
+  
+
+  // Temporary Solution, need to do real authentication shit , so watch and do later, tabtak baaki cheeze thik karlo
   const handleSubmit = (event) => {
     event.preventDefault();
     // TODO: Implement form submission logic here
     console.log('Form submitted:', { fullName, email, password });
+    setLoggedIn(true);
+    navigate("/home");
+
+    const tempUser = {
+      name: fullName,
+      email: email,
+      password: password
+    };
+
+    setUser(tempUser);
+
   };
 
   return (
+    <div className='login'>
     <div className="container">
       <div className="header">
         <h1>Create Account</h1>
@@ -65,6 +85,7 @@ function CreateAccount() {
           Already have an account? <a href="#">Login</a>
         </div>
       </div>
+    </div>
     </div>
   );
 }

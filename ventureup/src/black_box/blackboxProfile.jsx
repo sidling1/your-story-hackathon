@@ -1,17 +1,15 @@
 import React from 'react';
 import '../styles/blackboxprofile.css';
 
-const MyPage = () => {
+const MyPage = ({ user }) => {
   return (
     <div className="container">
-      <header className="navbar">
-        <h2>Navbar</h2>
-      </header>
       <main className="content">
         <div className="profile">
-          <img src="../../public/sidj.jpg" alt="Siddhant" className="profile-picture" />
-          <h2>My Name</h2>
-          <p>my_email@example.com</p>
+          <img src={require('./sidj.jpg')} alt="Siddhant" className="profile-picture" />
+          <h2>{user.name}</h2>
+          <p>{user.email}</p>
+          <p>{user.bio}</p>
         </div>
         <div className="information">
           <h2>Information</h2>

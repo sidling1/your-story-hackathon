@@ -1,0 +1,40 @@
+.resource {
+border: 1px solid #ddd;
+border-radius: 5px;
+padding: 15px;
+margin-bottom: 20px;
+
+width: 65%;
+}
+
+.resource-header {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.resource-header h2 {
+margin: 0;
+}
+
+.resource-actions {
+display: flex;
+justify-content: space-between;
+}
+
+/* .like-button,
+.share-button,
+.comment-button {
+background-color: transparent;
+border: none;
+cursor: pointer;
+font-size: 14px;
+padding: 5px 10px;
+border-radius: 5px;
+}
+
+.like-button:hover,
+.share-button:hover,
+.comment-button:hover {
+background-color: #ddd;
+} */

@@ -1,0 +1,65 @@
+.calendar {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calendar table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .calendar th, .calendar td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .calendar th {
+    background-color: #f0f0f0;
+  }
+  
+  .calendar td button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .calendar td button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .calendar form {
+    margin-top: 20px;
+  }
+  
+  .calendar label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .calendar input[type="text"], .calendar input[type="date"], .calendar input[type="time"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .calendar button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .calendar button[type="submit"]:hover {
+    background-color: #3e8e41;
+  }

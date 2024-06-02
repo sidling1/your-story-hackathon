@@ -1,13 +1,17 @@
 .discussion-forums {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-between;
     padding: 20px;
+
+    flex-direction: row;
   }
   
   .forums-list {
-    flex-basis: 30%;
-    margin-right: 20px;
+    flex-basis: 10%;
+    /* padding-right: 20px; */
+
+
   }
   
   .forums-list ul {
@@ -30,7 +34,7 @@
   }
   
   .selected-forum {
-    flex-basis: 70%;
+    flex-basis: 90%;
     padding: 20px;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './landingPage.css';
+import { authContext } from './contexts';
 
-function Landing() {
+function HomePage() {
   const [chatGroups, setChatGroups] = useState([]);
   const [connections, setConnections] = useState([]);
   const [articles, setArticles] = useState([]);
   const [events, setEvents] = useState([]);
+
+  const context = useContext(authContext);
 
 //   useEffect(() => {
 //     // Fetch chat groups, connections, articles, and events from an API or database
@@ -28,24 +31,7 @@ function Landing() {
 
   return (
     <div>
-      <header>
-        <h1>Logo Here</h1>
-        <nav>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Resources</a></li>
-            <li><a href="#">Profile</a></li>
-          </ul>
-        </nav>
-        <div className="notifications">
-          <h2>Notifications</h2>
-          <ul>
-            <li>Post: Hey Guys</li>
-            {/* Add more notifications here */}
-          </ul>
-        </div>
-      </header>
-
+      <h1>Hey {context.user.name} !! </h1>
       <main>
         <section>
           <h2>Recommended Chat Groups</h2>
@@ -94,12 +80,8 @@ function Landing() {
           </ul>
         </section>
       </main>
-
-      <footer>
-        {/* Add footer content here */}
-      </footer>
     </div>
   );
 }
 
-export default Landing;
+export default HomePage;

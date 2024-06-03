@@ -16,7 +16,7 @@ function DiscoverResources() {
   
   const resource = {
     title: "Startup Guide",
-    description: "Paise he paisa hoga"
+    description: "loremlorem ipsum delor lorem ipsum gol"
   }
 
   const [resources, setResources] = useState([{id:0, resource: resource}]);

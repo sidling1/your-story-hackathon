@@ -8,19 +8,17 @@ import MyPage from '../black_box/blackboxProfile';
 import DiscussionForums from '../black_box/discussionForums';
 import DiscoverMore from '../black_box/discovermore';
 import CreateAccount from '../black_box/CreateAccount';
-import { authContext } from '../black_box/contexts';
 import DiscoverResources from '../black_box/discoverResources';
 import EventCalendar from '../black_box/discoverEvents';
 
 export default function NewAppRoutes() {
 
-  const [isLoggedin, setIsLoggedin] = useState(false);
+  const [isLoggedin, setIsLoggedin] = useState(true);
   // const navigate = useNavigate();
-  const [userData,setUserData] = useState({});
+  // const [userData,setUserData] = useState({});
   // const authContext = createContext(null);
 
   return (
-    <authContext.Provider value={{user: userData, setUser: setUserData}}>
     <Router>
       <div className="main">
         {isLoggedin && (
@@ -39,7 +37,7 @@ export default function NewAppRoutes() {
               <Route path="/home" element={<HomePage/>}></Route>
               {/* <Route path="/resources" element={<Resources/>}></Route> */}
               <Route path="/profile/*" element={<MyPage user={{name: "John Doe",email: "johdoe@fmal.cm",bio:"I am great"}}/>}></Route>
-              <Route path="/discussions" element={<DiscussionForums/>}></Route>
+              <Route path="/discussions" element={<DiscussionForums />}></Route>
               <Route path="/discover" element={<DiscoverMore/>}></Route>
               <Route path="/resources" element={<DiscoverResources/>}></Route>
               <Route path="/events" element={<EventCalendar/>}></Route>
@@ -48,11 +46,10 @@ export default function NewAppRoutes() {
 
         </Routes>
 
-        {!isLoggedin && (<Navigate to="/login"/>)}
+        {isLoggedin? null : (<Navigate to="/home"/>)}
 
         </div>
       </div>
     </Router>
-    </authContext.Provider>
   )
 }

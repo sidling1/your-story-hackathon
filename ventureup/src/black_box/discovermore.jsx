@@ -18,7 +18,7 @@ function DiscoverMore() {
   
   const resource = {
     title: "Startup Guide",
-    description: "Paise he paisa hoga"
+    description: "lorem ipsum delor gol"
   }
 
   const [posts, setPosts] = useState([{id: 0,author: author, content: content}]);
@@ -41,34 +41,10 @@ function DiscoverMore() {
   //   setPosts(temp);
   // },[]);
 
-  const fetchPosts = () => {
-    // Fetch posts from API or database
-    fetch('/api/posts')
-      .then(res => res.json())
-      .then(data => setPosts([...posts, ...data]));
-  };
-
-  const fetchResources = () => {
-    // Fetch resources from API or database
-    fetch('/api/resources')
-      .then(res => res.json())
-      .then(data => setResources([...resources, ...data]));
-  };
-
-  const fetchConnections = () => {
-    // Fetch connections from API or database
-    fetch('/api/connections')
-      .then(res => res.json())
-      .then(data => setConnections([...connections, ...data]));
-  };
-
   const handleScroll = () => {
     if (loading) return;
     if (hasMore) {
       setLoading(true);
-      fetchPosts();
-      fetchResources();
-      fetchConnections();
       setLoading(false);
     }
   };

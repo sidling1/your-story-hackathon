@@ -46,12 +46,19 @@ padding: 5px 10px;
 border-radius: 5px;
 display: flex;
 align-items: center;
+color:white;
 }
 
 .like-button:hover,
 .comment-button:hover,
 .share-button:hover {
-background-color: #ddd;
+    
+background-color: #3C0753;
+color:white;
+text-decoration: none;
+border-radius: 10px;
+box-shadow: 2px 2px 2px #540a74;
+        
 }
 
 .like-button span {

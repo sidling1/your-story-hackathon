@@ -9,8 +9,9 @@ width: 65%;
 
 .resource-header {
 display: flex;
-align-items: center;
 margin-bottom: 10px;
+flex-direction: column;
+flex-flow:column;
 }
 
 .resource-header h2 {

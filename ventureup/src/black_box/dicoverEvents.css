@@ -1,17 +1,27 @@
 .calendar {
     max-width: 800px;
-    margin: 40px auto;
+    margin: 30px auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
   }
   
   .calendar table {
     width: 100%;
     border-collapse: collapse;
   }
-  
+ 
+  .calendar .calendar-table{
+    overflow-y: auto;
+    max-height: 300px;
+  }
+
+  .calendar form {
+    margin-top: 20px;
+  }
+
   .calendar th, .calendar td {
     border: 1px solid #ddd;
     padding: 10px;
@@ -19,7 +29,7 @@
   }
   
   .calendar th {
-    background-color: #f0f0f0;
+    background-color: transparent;
   }
   
   .calendar td button {
@@ -34,20 +44,17 @@
   .calendar td button:hover {
     background-color: #3e8e41;
   }
-  
-  .calendar form {
-    margin-top: 20px;
-  }
+
   
   .calendar label {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 2px;
   }
   
   .calendar input[type="text"], .calendar input[type="date"], .calendar input[type="time"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+    padding: 2px;
+    margin-bottom: 2px;
     border: 1px solid #ccc;
   }
   

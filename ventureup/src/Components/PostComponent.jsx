@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import './PostComponent.css';
 
 const Post = ({ author, content }) => {
-  const [likes, setLikes] = useState(0);
+  const [likes, setLikes] = useState(0)
+
+  const handleClick = ()=>{
+    // Show the whole post and its comment section on click
+    // full description, the person who has posted and all that stuff
+    
+  }
 
   return (
-    <div className="post">
+    <div className="post" onClick={handleClick}>
       <header className="post-header">
-        <img src={author.image} alt={author.name} />
+        <img src={require('../black_box/sidj.jpg')} alt={author.name} />
         <div className="post-author">
           <h3>{author.name}</h3>
           <p>{author.title}</p>
@@ -27,16 +33,5 @@ const Post = ({ author, content }) => {
   );
 };
 
-// const author = {
-//   name: 'John Doe',
-//   title: 'Software Engineer',
-//   image: 'https://example.com/author.jpg',
-// };
-
-// const content = 'This is an example post with some content.';
-
-// const App = () => {
-//   return <Post author={author} content={content} />;
-// };
 
 export default Post;

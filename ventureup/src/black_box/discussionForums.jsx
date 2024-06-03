@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import './discussionForums.css';
+import { useParams } from 'react-router-dom';
 
 function DiscussionForums() {
-  const [forums, setForums] = useState([{id:1,name:"Sid"},{id:2,name:"Dee"}]);
+  const [forums, setForums] = useState([{id:1,name:"Lorem"},{id:2,name:"Doler"}]);
+  // const { id } = useParams();
   const [selectedForum, setSelectedForum] = useState(0);
-  const [comments, setComments] = useState([{id:0,text:"Hey Guys",author:"Sid",date:"17th April"},{id:1,text:"Heysss",author:"Dee",date:"17th April"}]);
+  // if(id == null) setSelectedForum(0);
+  const [comments, setComments] = useState([{id:1,text:"Hey Guys",author:"John",date:"17th April",forumid: 1},{id:1,text:"Heysss",author:"Bob",date:"17th April",forumid: 2}]);
+  const [comment, setComment] = useState("")
 
 //   useEffect(() => {
 //     // Fetch forums from API or database
@@ -20,6 +24,18 @@ function DiscussionForums() {
     //  .then(data => setComments(data));
     setSelectedForum(forumId);
   };
+
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    console.log(comment);
+    // const userId = 0;
+    const text = comment;
+    const author = "John";
+    const date = new Date();
+
+    setComments([...comments, {id:comments.length,text:comment, author: author, date: date.toISOString(),forumid : selectedForum}]);
+    setComment("");
+  }
 
   return (
     <div className="discussion-forums">
@@ -37,19 +53,25 @@ function DiscussionForums() {
       </div>
       <div className="selected-forum">
         {selectedForum && (
-          <div>
+          <div style={{"overflow-y":"scroll","overflow-x":"hidden"}}>
             <h2>{forums.find(forum => forum.id === selectedForum).name}</h2>
             <ul>
-              {comments.map(comment => (
-                <li key={comment.id}>
-                  <p>{comment.text}</p>
-                  <p>Posted by {comment.author} on {comment.date}</p>
-                </li>
-              ))}
+              {comments.map(comment => {
+                if(comment.forumid != selectedForum){
+                  return (null);
+                }
+
+                return(
+                  <li key={comment.id}>
+                    <p>{comment.text}</p>
+                    <p>Posted by {comment.author} on {comment.date}</p>
+                  </li>
+                );
+              })}
             </ul>
             <form>
-              <textarea placeholder="Add a comment..."></textarea>
-              <button type="submit">Post</button>
+              <textarea placeholder="Add a comment..." value={comment} onChange={(e)=>{setComment(e.target.value)}}></textarea>
+              <button type="submit" onClick={handleSubmit}>Post</button>
             </form>
           </div>
         )}

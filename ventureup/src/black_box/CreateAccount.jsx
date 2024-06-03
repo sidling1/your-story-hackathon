@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './createaccount.css';
 import { useNavigate } from 'react-router-dom';
-import { authContext } from './contexts';
+// import { authContext } from './contexts';
 
 
 function CreateAccount({ setLoggedIn }) {
@@ -10,7 +10,7 @@ function CreateAccount({ setLoggedIn }) {
   const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
-  const { user, setUser } = useContext(authContext);
+  // const { user, setUser } = useContext(authContext);
   
 
   // Temporary Solution, need to do real authentication shit , so watch and do later, tabtak baaki cheeze thik karlo
@@ -21,14 +21,15 @@ function CreateAccount({ setLoggedIn }) {
     setLoggedIn(true);
     navigate("/home");
 
+    console.log(localStorage.getItem('user'))
+
     const tempUser = {
       name: fullName,
       email: email,
       password: password
     };
 
-    setUser(tempUser);
-
+    localStorage.setItem('user',JSON.stringify(tempUser));
   };
 
   return (
